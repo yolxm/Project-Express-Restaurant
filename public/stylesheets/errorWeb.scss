@@ -1,0 +1,38 @@
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 100px;
+
+  .text {
+    margin-right: 50px;
+    h1 {
+      font-size: 50px;
+      color: #928f8f;
+    }
+
+    h3 {
+      font-size: 30px;
+      text-align: center;
+      color: #928f8f;
+    }
+
+    span {
+      color: #d03300;
+      font-size: 60px;
+    }
+  }
+
+  button {
+    text-align: center;
+    width: 56%;
+    padding: 10px;
+    margin-top: 30px;
+    background-color: #d03300;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+}

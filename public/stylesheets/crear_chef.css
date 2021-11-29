@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: url("../images/restaurantbackgroundform.png");
+}
+
+.hide {
+  opacity: 0 !important;
+}
+
+.menu-mobile {
+  position: fixed;
+  opacity: 1;
+  height: 100vh;
+  width: 210px;
+  z-index: 2;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  background: white;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, rgba(200, 0, 0, 0.5)), color-stop(0, transparent)), -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(200, 0, 0, 0.5)), color-stop(0, transparent));
+  background-image: linear-gradient(90deg, rgba(200, 0, 0, 0.5) 50%, transparent 0), linear-gradient(rgba(200, 0, 0, 0.5) 50%, transparent 0);
+  background-size: 20px 20px;
+  -webkit-box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+          box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+.menu-mobile div {
+  font-size: 30px;
+  color: #535050;
+  display: block;
+}
+.menu-mobile a {
+  text-decoration: none;
+}
+.menu-mobile a li {
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  padding-top: 25px;
+  color: #464545;
+  font-weight: bold;
+  text-shadow: 1px 1px #f6c90e;
+  margin-left: 20px;
+}
+.menu-mobile a li:hover {
+  color: black;
+}
+
+#navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(36, 36, 36, 0.6);
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  height: 70px;
+}
+#navbar > a > img {
+  width: 180px;
+}
+#navbar ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+}
+#navbar ul a {
+  color: white;
+  text-decoration: none;
+}
+#navbar ul a li {
+  font-family: "Open Sans Condensed", sans-serif;
+  padding-right: 20px;
+  font-size: 22px;
+  text-shadow: 1px 1px gray;
+}
+#navbar ul a li img {
+  width: 42px;
+  margin-top: -6px;
+}
+#navbar a:hover {
+  color: #f6c90e;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+#navbar .menu-mobile-icon {
+  display: none;
+}
+#navbar .menu-mobile-icon span {
+  font-size: 48px;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 100px;
+  font-size: 60px;
+  font-family: "Satisfy", cursive;
+  color: #f6c90e;
+}
+
+form {
+  width: 35%;
+  margin: 0 auto;
+  font-size: 25px;
+}
+form input,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  font-family: "Poppins", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: #9e9a9a;
+}
+form label {
+  font-size: 20px;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 30px;
+  cursor: pointer;
+  background-color: white;
+  border: 2px solid #f6c90e;
+  color: #f6c90e;
+  font-weight: bold;
+  font-size: 19px;
+}
+form button:hover {
+  background-color: #f6c90e;
+  border: 2px solid transparent;
+  color: #313030;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 50px;
+  height: 100px;
+  width: 100%;
+  background-image: url("../images/footer.png");
+  background-color: #111111;
+}
+footer .media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 15px;
+}
+footer .media > div {
+  margin-top: 10px;
+  margin-left: 20px;
+  background: #eeeded;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+footer .media > div img {
+  width: 30px;
+  height: 30px;
+  padding: 9px;
+}
+footer .media div:hover {
+  background-color: #f6c90e;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+@media (max-width: 700px) {
+  header #navbar > ul {
+    display: none;
+  }
+  header #navbar .menu-mobile-icon {
+    display: block;
+  }
+}

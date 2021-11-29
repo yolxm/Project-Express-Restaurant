@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/chef.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  
+    <div class="menu-mobile hide">
+      <ul>
+        <a href="/">
+          <li>HOME</li>
+        </a>
+        <a href="/login">
+          <li>LOG IN</li>
+        </a>
+        <a href="/login/crear_chef">
+          <li>REGISTER CHEF</li>
+        </a>
+        <a href="/dishes">
+          <li>CREATE DISH</li>
+        </a>
+      </ul>
+    </div>
+  <div class="container">
+ 
+    <header>
+      <nav id="navbar">
+        <a href="/"><img src="/images/logo_transparent.png" alt=""></a>
+        <ul>
+          <a href="/dishes"><li>CREATE DISH</li></a>
+          <a href="/login"><li><img src="/images/icons8-user-64.png" alt=""></li></a>
+        </ul>
+        <div class="menu-mobile-icon">
+          <span>🍔</span>
+        </div>
+      </nav>
+    </header>
+    <section>
+      <div class="perfil-chef">
+        <img src="/images/chefs/<%- resultChef[0].image %>" alt="perfil chef">
+      </div>
+      <div>
+        <div class="description-chef">
+        <h1>Meet Our Chef</h1>
+        <h2><%= resultChef[0].name %> <%= resultChef[0].last_name %></h2>
+
+      <div class="line-icon">
+        <div class="line-icon2"></div>
+          <img src="/images/cook-hat.svg" alt="">
+        <div class="line-icon2"></div>
+      </div>
+        
+      <div>
+        <p class="info-chef"><%= resultChef[0].employment_history %></p>
+        
+        <div class="contact">
+          <div><img src="/images/email.png" alt="">
+          </div>
+          <p><%= resultChef[0].email %></p>
+        </div>
+
+        <div class="contact">
+          <div><img src="/images/llamada-telefonica.png" alt="">
+          </div>
+          <p><%= resultChef[0].phone_number %></p>
+        </div>
+
+        <div class="editChef">
+          <% resultChef.forEach(chef => { %> 
+          <a href="/editFormChef/<%- chef.chef_id %>">EDIT CHEF NOW &#129094;</a>
+          <% }); %>
+        </div>
+  
+      </div>
+      </div>
+      </div>
+    </section>
+
+    <div class="food">
+      <h2>Best Dishes
+      </h2>
+      <div class="line-icon">
+        <div class="line-icon2"></div>
+          <img src="/images/food-spot.svg" alt="">
+        <div class="line-icon2"></div>
+      </div>
+        
+     <div class="card-holder">
+      <% resultDish.forEach(dish => { %> 
+    <div class="card">
+      <div class="img"><img src="/images/dishes/<%- dish.image %>" alt=""></div>
+      <div class="content">
+          <h3><%- dish.dish_name %></h3>
+          <p><%- dish.description %></p>
+
+          <div>
+            <button> <a href="/dishes/deleteDish/<%- dish.dish_id %>/<%- dish.chef_id %>"/> Eliminar </a></button>
+
+            <button><a href="/dishes/<%- dish.dish_id %>"/>Editar </a></button>
+          </div>
+      </div>
+    </div>
+    <% }); %>
+  </div> 
+
+  </div>
+
+<footer>
+  <div class="media">
+    <div> <img src="/images/facebook.svg" alt=""></div>
+    <div> <img src="/images/twitter.svg" alt=""></div>
+    <div> <img src="/images/inst.svg" alt=""></div>
+  </div>
+</footer>
+  </div>
+    
+    <script>
+      const menuMobileIcon = document.querySelector(".menu-mobile-icon");
+      const menuMobile = document.querySelector(".menu-mobile");
+
+      menuMobileIcon.addEventListener("click", function () {
+        menuMobile.classList.toggle("hide");
+      });
+    </script>
+  </body>
+</html>

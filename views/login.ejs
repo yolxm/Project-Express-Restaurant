@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="menu-mobile hide">
+      <ul>
+        <a href="/">
+          <li>HOME</li>
+        </a>
+        <a href="/login/crear_chef">
+          <li>REGISTER CHEF</li>
+        </a>
+        <a href="/dishes">
+          <li>CREATE DISH</li>
+        </a>
+      </ul>
+    </div>
+    <header>
+      <nav id="navbar">
+        <a href="/"><img src="/images/logo_transparent.png" alt="" /></a>
+        <ul>
+          <a href="/dishes"><li>CREATE DISH</li></a>
+          <a href="/login"
+            ><li><img src="/images/icons8-user-64.png" alt="" /></li
+          ></a>
+        </ul>
+        <div class="menu-mobile-icon">
+          <span>🍔</span>
+        </div>
+      </nav>
+    </header>
+
+    <div class="formularios">
+      <div class="log-in">
+        <h2>Already have an account?</h2>
+        <h2>Log in</h2>
+        <form action="/login" method="post">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+          <label for="contraseña">Password</label>
+          <input type="password" id="contraseña" name="password" required />
+
+          <% var errorLogin %> <% if (errorLogin == 'error') { %>
+          <div class="error-login">
+            &#10799; La dirección de correo electrónico o contraseña son
+            incorrectas
+          </div>
+          <% } %>
+
+          <button type="submit">SIGN IN</button>
+        </form>
+      </div>
+
+      <div class="register">
+        <h2>Don't have an account yet?</h2>
+        <h2>Register now</h2>
+
+        <p>👩‍🍳 Become a chef in our restaurant</p>
+        <p>🥗 Create your favorite dishes</p>
+        <p>❌ Delete and edit your dishes</p>
+
+        <a href="/login/crear_chef"> <button>CREATE CHEF</button></a>
+      </div>
+    </div>
+
+    <footer>
+      <div id="contact">
+        <div>
+          <h1>Contact</h1>
+          <div>
+            <div class="icon-image">
+              <img src="/images/llamada-telefonica.png" alt="" />
+            </div>
+            <p>+34 933922934</p>
+          </div>
+          <div>
+            <div class="icon-image"><img src="/images/mapa.png" alt="" /></div>
+            <p>Barcelona</p>
+          </div>
+          <div>
+            <div class="icon-image"><img src="/images/email.png" alt="" /></div>
+            <p>restaurant@gmail.com</p>
+          </div>
+        </div>
+
+        <div>
+          <h1>Opening Hours</h1>
+          <div>
+            <div class="icon-image">
+              <img src="/images/reloj-de-pared-circular.png" alt="" />
+            </div>
+            <p>Monday to Thuesday: <span>6:00 - 18:00</span></p>
+          </div>
+          <div>
+            <div class="icon-image">
+              <img src="/images/reloj-de-pared-circular.png" alt="" />
+            </div>
+            <p>Friday to Saturdays: <span>12:00 - 23:30</span></p>
+          </div>
+          <div>
+            <div class="icon-image">
+              <img src="/images/reloj-de-pared-circular.png" alt="" />
+            </div>
+            <p>Sundays: <span>Closed</span></p>
+          </div>
+        </div>
+
+        <div class="media">
+          <div><img src="/images/facebook.svg" alt="" /></div>
+          <div><img src="/images/twitter.svg" alt="" /></div>
+          <div><img src="/images/inst.svg" alt="" /></div>
+        </div>
+      </div>
+
+      <div id="contact-mobile">
+        <div class="media-mobile">
+          <div><img src="/images/facebook.svg" alt="" /></div>
+          <div><img src="/images/twitter.svg" alt="" /></div>
+          <div><img src="/images/inst.svg" alt="" /></div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const menuMobileIcon = document.querySelector(".menu-mobile-icon");
+      const menuMobile = document.querySelector(".menu-mobile");
+
+      menuMobileIcon.addEventListener("click", function () {
+        menuMobile.classList.toggle("hide");
+      });
+    </script>
+  </body>
+</html>

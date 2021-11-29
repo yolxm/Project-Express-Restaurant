@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+  </head>
+
+  <body id="home">
+    <div class="menu-mobile hide">
+      <ul>
+        <a href="/">
+          <li>HOME</li>
+        </a>
+        <a href="/login">
+          <li>LOG IN</li>
+        </a>
+        <a href="/login/crear_chef">
+          <li>REGISTER CHEF</li>
+        </a>
+        <a href="/dishes">
+          <li>CREATE DISH</li>
+        </a>
+        <a href="#team">
+          <li>TEAM</li>
+        </a>
+        <a href="#contact">
+          <li>CONTACT</li>
+        </a>
+      </ul>
+    </div>
+    <div id="container">
+      <header>
+        <nav id="navbar">
+          <a href="#home"><img src="/images/logo_transparent.png" alt="" /></a>
+          <ul>
+            <a href="/dishes"><li>CREATE DISH</li></a>
+            <a href="#team"><li>TEAM</li></a>
+            <a href="#contact"><li>CONTACT</li></a>
+            <a href="/login"
+              ><li><img src="/images/icons8-user-64.png" alt="" /></li
+            ></a>
+          </ul>
+          <div class="menu-mobile-icon">
+            <span>🍔</span>
+          </div>
+        </nav>
+        <div class="title-one">
+          <h1>CENTRAL PERK</h1>
+          <a href="#gallery"><button>SEE DISHES</button></a>
+        </div>
+      </header>
+
+      <main>
+        <div class="about-us">
+          <div>
+          <h2>About Us</h2>
+        
+          <p>
+            Our restaurant awarded &#9733;&#9733;&#9733; by the Michelin Guide and Nominated as Best Restaurant in Barcelona 2011.
+            It is located in the newly built pavilion, in contact with the garden. Interior and exterior coincide through large windows
+          </p>
+          <p>Our Chefs offer you perfect cooking, best served dishes with fresh ingredients and old recipes. We have only carefully sourced and seasonal ingredients in our disposal to make rustic dishes. We provide you with daily self-made bread, sourdough pizza, roasted fish-meat-vegetables and many more.</p>
+        
+        </div>
+        </div>
+
+        <div id="team">
+          <h2>Meet Our Team</h2>
+          <div class="items">
+            <% resultChef.forEach(chef => { %>
+              <div class="item">
+                <img
+                  src="/images/chefs/<%-chef.image %>"
+                  alt=""
+                />
+              <a href="/chef/<%- chef.chef_id %>"><div class="see-more-image">
+                  <p>See more</p>
+                </div>
+              </a>
+                <h3><%= chef.name %> <%= chef.last_name %></h3>
+              </div>
+             <% }); %> 
+          </div>
+        </div>
+
+        <div class="events">
+          <h2>Special Events</h2>
+          <div class="types">
+            <div>
+              <div class="images-events">
+                <img src="/images/birthday-cake.png" alt="" />
+              </div>
+              <h3>BIRTHDAYS</h3>
+              <p>
+                Book a table for two with the best Italian dishes served for the
+                anniversary. Or reserve a bigger one for a huge family to get
+                together one sunny day. Gather your friends together
+              </p>
+            </div>
+            <div>
+              <div class="images-events">
+                <img src="/images/cheers.png" alt="" />
+              </div>
+              <h3>MEETINGS</h3>
+              <p>
+                You can also impress your boss by choosing the best place for
+                corporate party with your co-workers. Reserve a spacious room,
+                set the menu, choose the drinks and invite guests.
+              </p>
+            </div>
+
+            <div>
+              <div class="images-events">
+                <img src="/images/matrimonio.png" alt="" />
+              </div>
+              <h3>WEDDINGS</h3>
+              <p>
+                75 seats for 75 guests are all at your disposal. Organize a
+                party for a huge company and have fun in the restaurant. Show
+                your friends the real world of European cuisine and especially
+                Italian vibes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="gallery">
+          <h2>Food Gallery</h3>
+
+          <div>
+            <% resultDish.forEach(dish => { %>
+            <div>
+              <img
+                src="/images/dishes/<%- dish.image %>"
+                alt=""
+              />
+              <div class="info-dish">
+                <p><%= dish.dish_name %></p>
+              </div>
+            </div>
+            <% }); %>
+            
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="map">
+          <h2>Our Restaurant</h2>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4234.1636071866415!2d2.1517017707748005!3d41.37395872400213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a27946551971%3A0x24058a502af145dd!2sArenas%20de%20Barcelona!5e0!3m2!1ses!2ses!4v1638038702390!5m2!1ses!2ses" width="600" height="450" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div id="contact">
+          <div>
+            <h1>Contact</h1>
+            <div>
+              <div class="icon-image"><img src="/images/llamada-telefonica.png" alt="">
+              </div>
+              <p> +34 933922934 </p>
+            </div>
+            <div>
+              <div class="icon-image"><img src="/images/mapa.png" alt="">
+              </div>
+              <p>Barcelona</p>
+            </div>
+            <div>
+              <div class="icon-image"><img src="/images/email.png" alt="">
+              </div>
+              <p>restaurant@gmail.com</p>
+            </div>
+          </div>
+
+          <div>
+            <h1>Opening Hours</h1>
+            <div>
+              <div class="icon-image"><img src="/images/reloj-de-pared-circular.png" alt="">
+              </div>
+              <p>Monday to Thuesday: <span>6:00 - 18:00</span> 
+              </p>
+            </div>
+            <div>
+              <div class="icon-image"><img src="/images/reloj-de-pared-circular.png" alt="">
+              </div>
+              <p>Friday to Saturdays: <span>12:00 - 23:30</span> 
+              </p>
+            </div>
+            <div>
+              <div class="icon-image"><img src="/images/reloj-de-pared-circular.png" alt="">
+              </div>
+              <p>Sundays: <span>Closed</span>
+              </p>
+            </div>
+          </div>
+
+         <div class="media">
+           <div> <img src="/images/facebook.svg" alt=""></div>
+           <div> <img src="/images/twitter.svg" alt=""></div>
+           <div> <img src="/images/inst.svg" alt=""></div>
+         </div>
+        </div>
+
+        <div id="contact-mobile">
+            <div class="media-mobile">
+              <div><img src="/images/facebook.svg" alt="" /></div>
+              <div><img src="/images/twitter.svg" alt="" /></div>
+              <div><img src="/images/inst.svg" alt="" /></div>
+            </div>
+        </div>
+
+      </footer>
+    </div>
+
+    <script>
+      const slider = document.querySelector(".items");
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        slider.classList.add("active");
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener("mouseleave", () => {
+        isDown = false;
+        slider.classList.remove("active");
+      });
+      slider.addEventListener("mouseup", () => {
+        isDown = false;
+        slider.classList.remove("active");
+      });
+      slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = x - startX; //scroll-fast
+        slider.scrollLeft = scrollLeft - walk;
+      });
+
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 500 ||
+          document.documentElement.scrollTop > 500
+        ) {
+          document.getElementById("navbar").style.background =
+            "rgba(36, 36, 36, 0.6)";
+        } else {
+          document.getElementById("navbar").style.background = "none";
+        }
+      }
+
+      const menuMobileIcon = document.querySelector('.menu-mobile-icon');
+      const menuMobile = document.querySelector('.menu-mobile');
+
+      menuMobileIcon.addEventListener("click", function() {
+        menuMobile.classList.toggle('hide');
+      })
+    </script>
+  </body>
+</html>

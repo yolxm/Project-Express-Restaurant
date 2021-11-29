@@ -1,0 +1,41 @@
+.error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 100px;
+}
+.error .text {
+  margin-right: 50px;
+}
+.error .text h1 {
+  font-size: 50px;
+  color: #928f8f;
+}
+.error .text h3 {
+  font-size: 30px;
+  text-align: center;
+  color: #928f8f;
+}
+.error .text span {
+  color: #d03300;
+  font-size: 60px;
+}
+.error button {
+  text-align: center;
+  width: 56%;
+  padding: 10px;
+  margin-top: 30px;
+  background-color: #d03300;
+  color: white;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
